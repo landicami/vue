@@ -9,7 +9,15 @@
   <body>
     <h1>My vue app</h1>
     <div id="app">
-      <h2>Inside of my vue app</h2>
+      <p>{{ title }}</p>
+      <span>{{ author }}</span>
+      <h3>{{ age }}</h3>
+
+      <button v-on:click="age++">Increase age</button>
+      <button v-on:click="age--">Decrease age</button>
+
+      <div @click="title='Something else'">Change title</div>
+      <button @click="changeTitle('New title')">Update title</button>
     </div>
     <script src="app.js"></script>
   </body>
