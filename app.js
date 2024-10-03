@@ -5,11 +5,16 @@ const app = Vue.createApp({
       title: "The primal empires",
       author: "Star Wars",
       age: 44,
+      showInfo: false,
     };
   },
   methods: {
     changeTitle(title) {
       this.title = title;
+    },
+
+    changeInfo() {
+      this.showInfo = !this.showInfo;
     },
   },
 });
