@@ -46,6 +46,7 @@
 
       <ul>
         <li v-for="item in books">
+          <img :src="item.img" alt="Some stuff" />
           {{item.title}} and {{item.author}}
         </li>
       </ul>

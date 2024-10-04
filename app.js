@@ -10,7 +10,7 @@ const app = Vue.createApp({
       y: 9,
 
       books: [
-        {title: "hey", author: "mey"},
+        {title: "hey", author: "mey", img: 'assets/pef.PNG'},
         {title: "nej", author: "jau"}
       ],
 
