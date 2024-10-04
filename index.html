@@ -9,7 +9,7 @@
   <style>
     .box {
       padding: 100px 0;
-      width: 400px;
+      width: 200px;
       background-color: aquamarine;
       text-align: center;
       margin: 20px;
@@ -38,7 +38,18 @@
       <div class="box" @mouseover="handleEvent">mouseover</div>
       <div class="box" @mouseleave="handleEvent">mouseleave</div>
       <div class="box" @dblclick="handleEvent">doubleclick</div>
-      <div class="box"></div>
+      <div class="box" @mousemove="handleMousemove">poisiton - {{ x }} {{ y }}</div>
+      <br/>
+
+      <p>{{books[0].title}} and {{books[0].author}}</p>
+      <p>{{books[1].title}} and {{books[1].author}}</p>
+
+      <ul>
+        <li v-for="item in books">
+          {{item.title}} and {{item.author}}
+        </li>
+      </ul>
+
     </div>
     <script src="app.js"></script>
   </body>

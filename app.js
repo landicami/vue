@@ -6,6 +6,13 @@ const app = Vue.createApp({
       author: "Star Wars",
       age: 44,
       showInfo: false,
+      x: 0,
+      y: 9,
+
+      books: [
+        {title: "hey", author: "mey"},
+        {title: "nej", author: "jau"}
+      ]
     };
   },
   methods: {
@@ -19,6 +26,11 @@ const app = Vue.createApp({
 
     handleEvent(e) {
       console.log(e);
+    },
+
+    handleMousemove (e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
     },
   },
 });
