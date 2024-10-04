@@ -16,6 +16,10 @@
       display: inline-block;
       border: 1px solid;
     }
+
+    li.fav {
+    color: red;
+    }
   </style>
   <body>
     <h1>My vue app</h1>
@@ -45,10 +49,19 @@
       <p>{{books[1].title}} and {{books[1].author}}</p>
 
       <ul>
-        <li v-for="item in books">
-          <img :src="item.img" alt="Some stuff" />
+        <li v-for="item in books" :class="{ fav: item.isFav }">
           {{item.title}} and {{item.author}}
+          <!-- <img class="box" :src="item.img" alt="Some stuff" /> -->
+          <p>{{ item.isFav }}</p> <!-- Lägg till detta för att visa värdet av isFav -->
+          <button @click="toggleisFav(item)">Toggle</buttom>
         </li>
+      </ul>
+
+      <ul>
+        <li v-for="item in filteredBooks">
+          {{item.title}}
+        </li>
+
       </ul>
 
       <a v-bind:href="url">Website</a>

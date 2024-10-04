@@ -10,8 +10,10 @@ const app = Vue.createApp({
       y: 9,
 
       books: [
-        {title: "hey", author: "mey", img: 'assets/pef.PNG'},
-        {title: "nej", author: "jau"}
+        {title: "hey", author: "mey", img: 'assets/pef.PNG', isFav: true},
+        {title: "nej", author: "jau", isFav: false},
+        {title: "yes", author: "bes", isFav: true}
+
       ],
 
       url: "https://google.se",
@@ -34,7 +36,18 @@ const app = Vue.createApp({
       this.x = e.offsetX;
       this.y = e.offsetY;
     },
+
+    toggleisFav (item) {
+      item.isFav = !item.isFav;
+      console.log("Toggled", this.isFav)
+    }
   },
+
+  computed: {
+    filteredBooks(){
+      return this.books.filter((book) => book.isFav);
+    }
+  }
 });
 
 app.mount("#app");
