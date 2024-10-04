@@ -6,6 +6,17 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
   </head>
+  <style>
+    .box {
+      padding: 100px 0;
+      width: 400px;
+      background-color: aquamarine;
+      text-align: center;
+      margin: 20px;
+      display: inline-block;
+      border: 1px solid;
+    }
+  </style>
   <body>
     <h1>My vue app</h1>
     <div id="app">
@@ -23,6 +34,11 @@
       <button @click="changeInfo">
         {{ showInfo ? 'Hide info' : 'Show info' }}
       </button>
+      <br />
+      <div class="box" @mouseover="handleEvent">mouseover</div>
+      <div class="box" @mouseleave="handleEvent">mouseleave</div>
+      <div class="box" @dblclick="handleEvent">doubleclick</div>
+      <div class="box"></div>
     </div>
     <script src="app.js"></script>
   </body>

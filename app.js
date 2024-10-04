@@ -16,6 +16,10 @@ const app = Vue.createApp({
     changeInfo() {
       this.showInfo = !this.showInfo;
     },
+
+    handleEvent(e) {
+      console.log(e);
+    },
   },
 });
 
