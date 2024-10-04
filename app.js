@@ -12,7 +12,9 @@ const app = Vue.createApp({
       books: [
         {title: "hey", author: "mey"},
         {title: "nej", author: "jau"}
-      ]
+      ],
+
+      url: "https://google.se",
     };
   },
   methods: {
