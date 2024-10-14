@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <main>
+      <h1>{{ title }}</h1>
+      <div>
+        <input type="text" ref="name" />
+        <button @click="handleClick">Click me</button>
+      </div>
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Footer from "./components/Footer.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Footer,
+  },
+  data() {
+    return {
+      title: "My First Vue App",
+    };
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name);
+      this.$refs.name.classList.add("dark");
+      this.$refs.name.focus();
+    },
+  },
+};
 </script>
 
 <style>
-#app {
+main {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  text-align: center;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+}
+
+dark {
+  color: green;
 }
 </style>
