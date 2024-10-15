@@ -6,6 +6,11 @@
         <input type="text" ref="name" />
         <button @click="handleClick">Click me</button>
       </div>
+      <Modal
+        :isVisible="isModalVisible"
+        :msg="msg"
+        @close="isModalVisible = false"
+      />
     </main>
     <Footer />
   </div>
@@ -13,21 +18,34 @@
 
 <script>
 import Footer from "./components/Footer.vue";
+import Modal from "./components/Modal.vue";
+
 export default {
   name: "App",
   components: {
     Footer,
+    Modal,
   },
   data() {
     return {
       title: "My First Vue App",
+      isModalVisible: false, // Reaktiv egenskap för att styra modalens synlighet
+      msg: "From bapp to Modal",
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isModalVisible = true;
+    }, 2000);
   },
   methods: {
     handleClick() {
       console.log(this.$refs.name);
       this.$refs.name.classList.add("dark");
       this.$refs.name.focus();
+
+      // Visa modalen när knappen klickas
+      this.isModalVisible = true;
     },
   },
 };
@@ -49,7 +67,7 @@ h1 {
   padding: 10px;
 }
 
-dark {
+.dark {
   color: green;
 }
 </style>
