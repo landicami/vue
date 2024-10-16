@@ -1,6 +1,6 @@
 <template>
   <div class="backdrop" v-if="isVisible" ref="modal">
-    <div class="modal">
+    <div class="modal" :class="{ sale: theme === 'sale' }">
       <p>Modal content</p>
       <p>{{ msg }}</p>
       <button @click="handleClose">Close Modal</button>
@@ -17,6 +17,9 @@ export default {
       required: true,
     },
     msg: {
+      type: String,
+    },
+    theme: {
       type: String,
     },
   },
@@ -44,5 +47,12 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+}
+
+.sale {
+  background-color: lightgreen;
+  color: white;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 </style>

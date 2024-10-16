@@ -9,6 +9,7 @@
       <Modal
         :isVisible="isModalVisible"
         :msg="msg"
+        theme="sale"
         @close="isModalVisible = false"
       />
     </main>
